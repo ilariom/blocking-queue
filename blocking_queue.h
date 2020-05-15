@@ -89,7 +89,6 @@ private:
     std::deque<T> data_;
     mutable std::mutex m_;
     semaphore e_;
-    size_t sz;
 };
 
 template<typename T>
