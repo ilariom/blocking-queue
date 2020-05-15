@@ -2,7 +2,6 @@
 #define blocking_queue_h
 
 #include <mutex>
-#include <condition_variable>
 #include <deque>
 
 namespace estd
@@ -164,7 +163,7 @@ inline typename blocking_queue<T>::consumer_iterator blocking_queue<T>::rbegin_d
 }
 
 template<typename T>
-blocking_queue<T>::consumer_iterator::consumer_iterator(blocking_queue& bq, bool advance, bool end) 
+inline blocking_queue<T>::consumer_iterator::consumer_iterator(blocking_queue& bq, bool advance, bool end) 
     : bq_(bq), end_(end)
 {
     if (end)
